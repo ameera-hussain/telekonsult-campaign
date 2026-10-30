@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&display=swap');
+@import "tailwindcss";
+
+@plugin "daisyui" {
+  themes: nadi --default;
+}
+@plugin "daisyui/theme" {
+  name: "nadi";
+  default: true;
+  color-scheme: dark;
+  --color-base-100: #0c0e36;
+  --color-base-200: #070831;
+  --color-base-300: #15173f;
+  --color-base-content: #e0e0ff;
+  --color-primary: #ffeb92;
+  --color-primary-content: #393000;
+  --color-secondary: #24264e;
+  --color-secondary-content: #e0e0ff;
+  --color-accent: #c0c1ff;
+  --color-accent-content: #26286b;
+  --color-neutral: #15173f;
+  --color-neutral-content: #e0e0ff;
+  --color-info: #c0c1ff;
+  --color-info-content: #26286b;
+  --color-success: #ffe249;
+  --color-success-content: #211b00;
+  --color-warning: #ffb86c;
+  --color-warning-content: #492900;
+  --color-error: #93000a;
+  --color-error-content: #ffdad6;
+  --radius-box: 1rem;
+  --radius-field: 9999px;
+  --radius-selector: 9999px;
+}
+
+html {
+  min-width: 320px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+  vertical-align: middle;
+}
