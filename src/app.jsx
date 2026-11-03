@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
 import airFryerImage from './assets/airfryer.png'
+import badgeImage from './assets/badge.png'
 import heroBannerImage from './assets/prizehero.png'
 import nadiLogo from './assets/NadiWellbeing.png'
 import tabletImage from './assets/tablet.png'
@@ -19,24 +20,24 @@ const assets = {
 
 const steps = [
   {
-    title: 'Tempah di Sistem NADI Kesejahteraan Kendiri',
+    title: 'Tempah Sesi Telekonsultasi Anda atau Ahli NADI',
     eyebrow: 'Langkah pertama',
     icon: 'event_available',
-    description: <>Petugas log masuk dan membuat tempahan sesi telekonsultasi untuk Ahli NADI melalui portal rasmi <a href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer" style="text-decoration: underline;"><strong>NADI Kesejahteraan Kendiri</strong></a>.</>,
+    description: <>Klik  <a href={'https://hatitelehealth.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer" style="text-decoration: underline;"><strong>di sini </strong></a> untuk membuat tempahan sesi telekonsultasi.</>,
     note: 'Akses melalui browser desktop atau tablet pusat',
   },
   {
-    title: 'Ahli NADI Hadir Sesi',
+    title: 'Hadir ke Sesi Telekonsultasi',
     eyebrow: 'Langkah kedua',
     icon: 'video_chat',
-    description: 'Pastikan Ahli NADI hadir ke sesi konsultasi dan melengkapkan sesi interaksi bersama pegawai perubatan atau pakar secara dalam talian sehingga tamat.',
+    description: 'Pastikan anda atau ahli NADI hadir ke sesi konsultasi dan melengkapkan sesi interaksi bersama pegawai perubatan atau pakar secara dalam talian sehingga tamat.',
     note: 'Sesi interaktif mengikut piawaian',
   },
   {
     title: 'Kumpul 1 Tiket Cabutan!',
     eyebrow: 'Langkah ketiga',
     icon: 'confirmation_number',
-    description: <>Setiap telekonsultasi yang selesai dan disahkan secara automatik menjana <strong>1 tiket penyertaan cabutan</strong> ke atas ID petugas anda. Tiada had maksimum!</>,
+    description: <>Setiap telekonsultasi yang selesai dan disahkan secara automatik menjana <strong>1 tiket penyertaan cabutan</strong>. Tiada had maksimum!</>,
     note: 'Kumpul seberapa banyak tiket yang boleh',
   },
 ]
@@ -78,22 +79,22 @@ const terms = [
   {
     title: 'Kelayakan Peserta',
     icon: 'badge',
-    text: <>Kempen ini terbuka secara eksklusif kepada semua Pengurus (Manager) dan Penolong Pengurus (Assistant Manager) Pusat NADI di seluruh Malaysia.</>,
+    text: <>Kempen ini terbuka kepada semua Ahli Nadi,  Pengurus (Manager) dan Penolong Pengurus (Assistant Manager) Pusat NADI di seluruh Malaysia.</>,
   },
   {
     title: 'Pengesahan Status "Completed"',
     icon: 'task_alt',
-    text: <>Hanya sesi telekonsultasi yang ditempah melalui sistem NES dan tamat dengan status <strong>Completed (Selesai sepenuhnya oleh doktor &amp; pesakit)</strong> sahaja diambil kira bagi penjanaan nombor tiket cabutan bertuah.</>,
+    text: <>Hanya sesi telekonsultasi yang tamat dengan status <strong>Completed (Selesai sepenuhnya oleh doktor &amp; pesakit)</strong> sahaja diambil kira bagi penjanaan nombor tiket cabutan bertuah.</>,
   },
   {
     title: 'Formula Tiket Berganda',
     icon: 'confirmation_number',
-    text: 'Setiap 1 sesi telekonsultasi yang berjaya = 1 entri tiket unik cabutan bertuah. Tiada sebarang had maksimum dikenakan — lagi banyak anda bantu ahli, lagi tinggi peluang anda terpilih!',
+    text: 'Setiap 1 sesi telekonsultasi yang berjaya = 1 entri tiket unik cabutan bertuah. Tiada sebarang had maksimum dikenakan — lagi banyak sesi, lagi tinggi peluang anda terpilih!',
   },
   {
     title: 'Pengumuman & Sesi Cabutan Langsung',
     icon: 'live_tv',
-    text: 'Tarikh cabutan bertuah rasmi akan disiarkan secara langsung (Live Draw) melalui saluran komunikasi NADI. Setiap pemenang akan disahkan identiti dan dihubungi oleh pihak NADI Wellbeing.',
+    text: 'Tarikh cabutan bertuah rasmi akan disiarkan kemudian.',
   },
 ]
 
@@ -247,10 +248,10 @@ export function App() {
           <div class="page-container hero-grid">
             <div class="hero-copy">
               <div class="hero-badges">
-                <span class="badge campaign-badge"><Icon>stars</Icon>Khas untuk Pengurus dan Penolong Pengurus NADI</span>
+                <span class="badge campaign-badge"><Icon>stars</Icon>Khas untuk Petugas dan Ahli Nadi</span>
               </div>
               <h1>Rebut Peluang Memenangi Ganjaran Hebat!</h1>
-              <p class="hero-description">Setiap telekonsultasi yang berjaya memberi anda <strong>1 tiket penyertaan cabutan bertuah</strong>. Lebih banyak ahli yang anda bantu lengkapkan sesi telekonsultasi, lebih besar peluang anda untuk menang!*</p>
+              <p class="hero-description">Setiap telekonsultasi yang berjaya memberi anda <strong>1 tiket penyertaan cabutan bertuah</strong>. Lebih banyak sesi telekonsultasi, lebih besar peluang anda untuk menang!*</p>
               <div class="stats hero-stats">
                 <div class="stat">
                   <span class="stat-title">Formula menang</span>
@@ -277,6 +278,11 @@ export function App() {
               </div>
             </div>
           </div>
+          <img
+            class="hero-promo-badge"
+            src={badgeImage}
+            alt="Promosi untuk 50 tempahan terawal: Kad Touch 'n Go bernilai RM50"
+          />
         </section>
 
         <section class="steps-section" id="cara-sertai">
@@ -285,7 +291,7 @@ export function App() {
               badge="Panduan langkah mudah"
               icon="flag"
               title="3 Langkah Mudah Kumpul Tiket Cabutan"
-              description="Bantu Ahli NADI mendapatkan khidmat nasihat kesihatan berkualiti secara telekonsultasi dan kumpul tiket cabutan bertuah anda hari ini!"
+              description="Tempah sesi telekonsultasi dan dapatkan khidmat nasihat kesihatan berkualiti sambil kumpul tiket cabutan bertuah anda hari ini!"
             />
             <div class="steps-grid">
               {steps.map((step, index) => (
@@ -320,7 +326,7 @@ export function App() {
               badge="Ganjaran Menarik!"
               icon="military_tech"
               title="Senarai Hadiah Lumayan Menanti Anda"
-              description="Menangi barangan teknologi pintar terkini dan ganjaran tunai Touch 'n Go khas untuk petugas paling berdedikasi!"
+              description="Menangi barangan teknologi pintar terkini dan ganjaran tunai Touch 'n Go!"
             />
             <div class="prizes-grid">
               {prizes.map((prize) => <PrizeCard prize={prize} key={prize.title} />)}
@@ -384,10 +390,10 @@ export function App() {
           <div class="page-container">
             <div class="card cta-card">
               <span class="badge cta-badge"><Icon>bolt</Icon>Tingkatkan Sesi Sekarang</span>
-              <h2>Mula Bantu Ahli NADI Hari Ini &amp; Gandakan Tiket Kemenangan Anda!</h2>
+              <h2>Tempah Sekarang dan Gandakan Tiket Kemenangan Anda!</h2>
               <p>Setiap bantuan anda mengubah tahap kesihatan komuniti setempat sambil membuka peluang membawa pulang hadiah-hadiah menarik.</p>
               <div class="cta-actions">
-                <a class="btn btn-primary" href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>BUAT TEMPAHAN SEKARANG!</a>
+                <a class="btn btn-primary" href={'https://hatitelehealth.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>BUAT TEMPAHAN SEKARANG!</a>
                 <a class="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon>chat</Icon>HUBUNGI NADI WELLBEING</a>
               </div>
             </div>

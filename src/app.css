@@ -213,6 +213,17 @@ main {
   background-size: auto 100%;
 }
 
+.hero-promo-badge {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  left: 56%;
+  width: clamp(176px, 20.9vw, 253px);
+  height: auto;
+  filter: drop-shadow(0 8px 18px rgb(7 8 49 / 35%));
+  pointer-events: none;
+}
+
 .hero-grid {
   display: flex;
   min-height: 460px;
@@ -1601,6 +1612,12 @@ p {
     padding-top: var(--hero-image-height);
     background-image: none;
     background-color: #1F2151;
+  }
+
+  .hero-promo-badge {
+    top: 4%;
+    left: 4%;
+    width: clamp(132px, 27.5vw, 204px);
   }
 
   .hero-section::before {
