@@ -1572,10 +1572,25 @@ p {
 
 @media (max-width: 900px) {
   .hero-section {
-    --hero-image-size: min(100vw, 560px);
-    padding-top: var(--hero-image-size);
-    background-position: top center;
-    background-size: var(--hero-image-size) auto;
+    --hero-image-height: clamp(260px, 62vw, 460px);
+    padding-top: var(--hero-image-height);
+    background-image: none;
+    background-color: #1F2151;
+  }
+
+  .hero-section::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: var(--hero-image-height);
+    content: '';
+    background-color: #1F2151;
+    background-image: var(--hero-background);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .hero-grid {
