@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'preact/hooks'
 import airFryerImage from './assets/airfryer.png'
-import heroBannerImage from './assets/BannerTelekonsultasi.png'
+import heroBannerImage from './assets/prizehero.png'
 import nadiLogo from './assets/NadiWellbeing.png'
 import tabletImage from './assets/tablet.png'
 import tngImage from './assets/tng.png'
@@ -19,10 +19,10 @@ const assets = {
 
 const steps = [
   {
-    title: 'Tempah di Sistem NES',
+    title: 'Tempah di Sistem NADI Kesejahteraan Kendiri',
     eyebrow: 'Langkah pertama',
     icon: 'event_available',
-    description: <>Petugas log masuk dan membuat tempahan sesi telekonsultasi untuk Ahli NADI melalui portal rasmi NES.</>,
+    description: <>Petugas log masuk dan membuat tempahan sesi telekonsultasi untuk Ahli NADI melalui portal rasmi <a href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer" style="text-decoration: underline;"><strong>NADI Kesejahteraan Kendiri</strong></a>.</>,
     note: 'Akses melalui browser desktop atau tablet pusat',
   },
   {
@@ -116,13 +116,17 @@ function Brand({ showLogo = false }) {
   )
 }
 
-function NavLinks({ mobile = false }) {
+function NavLinks({ mobile = false, open = false, onNavigate }) {
   return (
-    <nav class={mobile ? 'mobile-nav' : 'desktop-nav'} aria-label="Navigasi utama">
-      <a class={mobile ? '' : 'nav-active'} href="#utama">Utama</a>
-      <a href="#cara-sertai">Cara Sertai</a>
-      <a href="#hadiah">Senarai Hadiah</a>
-      <a href="#syarat">Terma &amp; FAQ</a>
+    <nav
+      id={mobile ? 'mobile-menu' : undefined}
+      class={mobile ? `mobile-nav${open ? ' is-open' : ''}` : 'desktop-nav'}
+      aria-label={mobile ? 'Navigasi mudah alih' : 'Navigasi utama'}
+    >
+      <a class={mobile ? '' : 'nav-active'} href="#utama" onClick={onNavigate}>Utama</a>
+      <a href="#cara-sertai" onClick={onNavigate}>Cara Sertai</a>
+      <a href="#hadiah" onClick={onNavigate}>Senarai Hadiah</a>
+      <a href="#syarat" onClick={onNavigate}>Terma &amp; FAQ</a>
     </nav>
   )
 }
@@ -156,7 +160,7 @@ function PrizeCard({ prize }) {
         <img src={prize.image} alt={prize.alt} loading="lazy" onError={handleImageError} />
       </div>
       <div class="prize-copy">
-        {prize.className === 'prize-card-first' && <span class="badge mini-led-badge">Mini LED 4K <span>Pawagam rumah</span></span>}
+        {/* {prize.className === 'prize-card-first' && <span class="badge mini-led-badge">Mini LED 4K <span>Pawagam rumah</span></span>} */}
         <h3>{prize.title}</h3>
         <p>{prize.description}</p>
       </div>
@@ -170,6 +174,20 @@ function PrizeCard({ prize }) {
 
 export function App() {
   const [headerHidden, setHeaderHidden] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    if (!menuOpen) return
+    const close = () => setMenuOpen(false)
+    const handleKey = (event) => event.key === 'Escape' && close()
+    const media = window.matchMedia('(min-width: 768px)')
+    media.addEventListener('change', close)
+    window.addEventListener('keydown', handleKey)
+    return () => {
+      media.removeEventListener('change', close)
+      window.removeEventListener('keydown', handleKey)
+    }
+  }, [menuOpen])
 
   useEffect(() => {
     const header = document.querySelector('.site-header')
@@ -206,12 +224,22 @@ export function App() {
 
   return (
     <div class="site-shell" data-theme="nadi">
-      <header class={`site-header${headerHidden ? ' is-hidden' : ''}`}>
+      <header class={`site-header${headerHidden && !menuOpen ? ' is-hidden' : ''}`}>
         <div class="navbar header-inner">
           <Brand showLogo />
           <NavLinks />
+          <button
+            type="button"
+            class="menu-toggle"
+            aria-label={menuOpen ? 'Tutup menu' : 'Buka menu'}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <Icon>{menuOpen ? 'close' : 'menu'}</Icon>
+          </button>
         </div>
-        <NavLinks mobile />
+        <NavLinks mobile open={menuOpen} onNavigate={() => setMenuOpen(false)} />
       </header>
 
       <main>
@@ -222,12 +250,12 @@ export function App() {
                 <span class="badge campaign-badge"><Icon>stars</Icon>Khas untuk Pengurus dan Penolong Pengurus NADI</span>
               </div>
               <h1>Rebut Peluang Memenangi Ganjaran Hebat!</h1>
-              <p class="hero-description">Setiap telekonsultasi yang berjaya memberi anda <strong>1 tiket penyertaan cabutan bertuah</strong>. Lebih banyak ahli yang anda bantu lengkapkan sesi telekonsultasi, lebih besar peluang anda untuk menang!</p>
+              <p class="hero-description">Setiap telekonsultasi yang berjaya memberi anda <strong>1 tiket penyertaan cabutan bertuah</strong>. Lebih banyak ahli yang anda bantu lengkapkan sesi telekonsultasi, lebih besar peluang anda untuk menang!*</p>
               <div class="stats hero-stats">
                 <div class="stat">
                   <span class="stat-title">Formula menang</span>
                   <strong class="stat-value">1 Sesi = 1 Tiket</strong>
-                  <span class="stat-desc">Disahkan Portal NES</span>
+                  <span class="stat-desc">Disahkan di Sistem NADI</span>
                 </div>
                 <div class="stat">
                   <span class="stat-title">Hadiah utama</span>
@@ -243,6 +271,9 @@ export function App() {
               <div class="hero-actions">
                 <a class="btn btn-primary" href="#cara-sertai"><Icon>how_to_reg</Icon>Ketahui Cara Menang</a>
                 <a class="btn btn-secondary" href="#hadiah"><Icon>emoji_events</Icon>Lihat Senarai Hadiah</a>
+              </div>
+              <div>
+                <p class="terms-note text-xs">*Tertakluk kepada terma dan syarat di bawah.</p>
               </div>
             </div>
           </div>
@@ -330,6 +361,7 @@ export function App() {
             <div class="terms-intro">
               <span class="badge section-badge"><Icon>policy</Icon>Ketelusan kempen</span>
               <h2>Terma &amp; Syarat Utama Pertandingan</h2>
+              <p>Keputusan cabutan bertuah adalah muktamad dan tertakluk kepada terma dan syarat.</p>
               <p>Sila fahami panduan kelayakan dan pengiraan tiket di bawah untuk memastikan setiap sesi telekonsultasi yang anda bantu direkodkan secara sah dalam cabutan bertuah NADI.</p>
               <div class="terms-help">
                 <h3><Icon>help</Icon>Ada Persoalan Mengenai Data Sesi?</h3>
@@ -355,7 +387,7 @@ export function App() {
               <h2>Mula Bantu Ahli NADI Hari Ini &amp; Gandakan Tiket Kemenangan Anda!</h2>
               <p>Setiap bantuan anda mengubah tahap kesihatan komuniti setempat sambil membuka peluang membawa pulang hadiah-hadiah menarik.</p>
               <div class="cta-actions">
-                <a class="btn btn-primary" href={nesUrl} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>Buat tempahan sekarang!</a>
+                <a class="btn btn-primary" href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>Buat tempahan sekarang!</a>
                 <a class="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon>chat</Icon>Hubungi NADI Wellbeing</a>
               </div>
             </div>
