@@ -363,7 +363,16 @@ p {
 }
 
 .hero-actions {
+  flex-wrap: nowrap;
   gap: 12px;
+}
+
+.hero-actions .btn {
+  min-width: 0;
+  flex: 1 1 0;
+  justify-content: center;
+  padding-inline: 12px;
+  white-space: nowrap;
 }
 
 .prizes-glow,
@@ -1238,24 +1247,35 @@ p {
   }
 
   .hero-stats {
-    padding: 11px 9px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 0;
+    padding: 14px 16px;
   }
 
-  .hero-stats .stat {
-    padding-inline: 6px;
+  .hero-stats .stat,
+  .hero-stats .stat:first-child {
+    padding: 0;
     gap: 3px;
   }
 
+  .hero-stats .stat:first-child {
+    grid-column: 1 / -1;
+  }
+
+  .hero-stats .stat:nth-child(3) {
+    padding-left: 12px;
+  }
+
   .hero-stats .stat-title {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .hero-stats .stat-value {
-    font-size: clamp(11px, 3.4vw, 15px);
+    font-size: clamp(15px, 4.2vw, 17px);
   }
 
   .hero-stats .stat-desc {
-    font-size: 8px;
+    font-size: 10px;
   }
 
   .hero-actions {
@@ -1513,8 +1533,13 @@ p {
   }
 
   .hero-actions .btn {
-    padding-inline: 11px;
-    font-size: 10px;
+    padding-inline: 8px;
+    gap: 4px;
+    font-size: 9px;
+  }
+
+  .hero-actions .btn .material-symbols-outlined {
+    font-size: 16px;
   }
 }
 

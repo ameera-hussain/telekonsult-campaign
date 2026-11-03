@@ -269,8 +269,8 @@ export function App() {
                 </div>
               </div>
               <div class="hero-actions">
-                <a class="btn btn-primary" href="#cara-sertai"><Icon>how_to_reg</Icon>Ketahui Cara Menang</a>
-                <a class="btn btn-secondary" href="#hadiah"><Icon>emoji_events</Icon>Lihat Senarai Hadiah</a>
+                <a class="btn btn-primary" href="#cara-sertai"><Icon>how_to_reg</Icon>KETAHUI CARA MENANG</a>
+                <a class="btn btn-secondary" href="#hadiah"><Icon>emoji_events</Icon>LIHAT SENARAI HADIAH</a>
               </div>
               <div>
                 <p class="terms-note text-xs">*Tertakluk kepada terma dan syarat di bawah.</p>
@@ -387,8 +387,8 @@ export function App() {
               <h2>Mula Bantu Ahli NADI Hari Ini &amp; Gandakan Tiket Kemenangan Anda!</h2>
               <p>Setiap bantuan anda mengubah tahap kesihatan komuniti setempat sambil membuka peluang membawa pulang hadiah-hadiah menarik.</p>
               <div class="cta-actions">
-                <a class="btn btn-primary" href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>Buat tempahan sekarang!</a>
-                <a class="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon>chat</Icon>Hubungi NADI Wellbeing</a>
+                <a class="btn btn-primary" href={'https://hati.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>BUAT TEMPAHAN SEKARANG!</a>
+                <a class="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon>chat</Icon>HUBUNGI NADI WELLBEING</a>
               </div>
             </div>
           </div>
