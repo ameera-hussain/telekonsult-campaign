@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'preact/hooks'
 import airFryerImage from './assets/airfryer.png'
 import badgeImage from './assets/badge.png'
-import heroBannerImage from './assets/prizehero.png'
+import heroBannerImage from './assets/prizeherolight.png'
 import nadiLogo from './assets/NadiWellbeing.png'
 import tabletImage from './assets/tablet.png'
 import tngImage from './assets/tng.png'
