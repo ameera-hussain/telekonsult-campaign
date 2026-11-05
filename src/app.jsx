@@ -354,7 +354,7 @@ export function App() {
                 <p>Banyak lagi hadiah menanti anda! Sebanyak 100 keping Kad Touch 'n Go edisi khas dengan baki kredit pramuat RM100 setiap satu disediakan untuk kegunaan harian, tol, dan pengangkutan awam.</p>
                 <div class="tng-facts">
                   <div><span>Baki pramuat</span><strong>RM100</strong></div>
-                  <div><span>Jumlah penerima</span><strong>100 Staf</strong></div>
+                  <div><span>Jumlah penerima</span><strong>100 Pemenang</strong></div>
                   <div><span>Pengaktifan</span><strong>Serta-merta</strong></div>
                 </div>
               </div>
@@ -368,7 +368,7 @@ export function App() {
               <span class="badge section-badge"><Icon>policy</Icon>Ketelusan kempen</span>
               <h2>Terma &amp; Syarat Utama Pertandingan</h2>
               <p>Keputusan cabutan bertuah adalah muktamad dan tertakluk kepada terma dan syarat.</p>
-              <p>Sila fahami panduan kelayakan dan pengiraan tiket di bawah untuk memastikan setiap sesi telekonsultasi yang anda bantu direkodkan secara sah dalam cabutan bertuah NADI.</p>
+              <p>Sila fahami panduan kelayakan dan pengiraan tiket di bawah untuk memastikan setiap sesi telekonsultasi yang anda lengkapkan direkodkan secara sah dalam cabutan bertuah NADI.</p>
               <div class="terms-help">
                 <h3><Icon>help</Icon>Ada Persoalan Mengenai Data Sesi?</h3>
                 <p>Semua kiraan tiket dijana secara langsung menerusi rekod NADI Wellbeing. Jika terdapat keraguan tentang status sesi pesakit, hubungi Admin NADI Wellbeing.</p>
@@ -391,7 +391,7 @@ export function App() {
             <div class="card cta-card">
               <span class="badge cta-badge"><Icon>bolt</Icon>Tingkatkan Sesi Sekarang</span>
               <h2>Tempah Sekarang dan Gandakan Tiket Kemenangan Anda!</h2>
-              <p>Setiap bantuan anda mengubah tahap kesihatan komuniti setempat sambil membuka peluang membawa pulang hadiah-hadiah menarik.</p>
+              <p>Setiap tempahan yang berjaya boleh mengubah tahap kesihatan anda sambil membuka peluang membawa pulang hadiah-hadiah menarik.</p>
               <div class="cta-actions">
                 <a class="btn btn-primary" href={'https://hatitelehealth.mrichealthcare.com/'} target="_blank" rel="noopener noreferrer"><Icon>open_in_new</Icon>BUAT TEMPAHAN SEKARANG!</a>
                 <a class="btn btn-secondary" href={whatsappUrl} target="_blank" rel="noopener noreferrer"><Icon>chat</Icon>HUBUNGI NADI WELLBEING</a>
