@@ -407,7 +407,7 @@ export function App() {
             <div class="footer-about">
               <Brand showLogo />
               <p>Kempen khas inisiatif kesihatan digital memperkasakan petugas NADI di seluruh Malaysia melalui perkhidmatan telekonsultasi berkualiti tinggi dan ganjaran pencapaian eksklusif.</p>
-              <span class="footer-status"><i />Penyertaan terbuka • Petugas sah NADI</span>
+              <span class="footer-status"><i />Penyertaan terbuka</span>
             </div>
             <div>
               <h2>Pautan pantas</h2>
