@@ -278,11 +278,11 @@ export function App() {
               </div>
             </div>
           </div>
-          <img
+          {/* <img
             class="hero-promo-badge"
             src={badgeImage}
             alt="Promosi untuk 50 tempahan terawal: Kad Touch 'n Go bernilai RM50"
-          />
+          /> */}
         </section>
 
         <section class="steps-section" id="cara-sertai">
